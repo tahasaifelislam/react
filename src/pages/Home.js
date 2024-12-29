@@ -11,6 +11,11 @@ function Home() {
         <p> Bocadillo TO FIT ANY TASTE</p>
         <Link to="/menu">
           <button> ORDER NOW </button>
+          
+        </Link>
+        <Link to="/CustomSandwich">
+          <button> CUSTOMISE YOUR BOCADILLO </button>
+          
         </Link>
       </div>
     </div>
