@@ -1,0 +1,26 @@
+.cart {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .cart h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  .cart ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart ul li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .cart h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  

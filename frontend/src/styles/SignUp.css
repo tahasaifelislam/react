@@ -1,0 +1,53 @@
+/* pages/SignUp.css */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    background-color: #fafafa; /* Light gray background */
+  }
+  
+  .signup-form {
+    width: 350px; /* Form width */
+    padding: 30px;
+    border: 1px solid #dbdbdb; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .signup-form h2 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  
+  .signup-form input:focus {
+    outline: none;
+    border-color: #0095f6; /* Instagram blue on focus */
+  }
+  
+  .signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0095f6; /* Instagram blue */
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .signup-form button:hover {
+    background-color: #007bb5; /* Darker blue on hover */
+  }
+  
