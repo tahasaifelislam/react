@@ -1,6 +1,7 @@
 .custom-sandwich-container {
     text-align: center;
-    padding: 20px;
+    padding: 50px;
+    width : flex;
   }
   
   .sandwich-preview {
@@ -12,7 +13,7 @@
   }
   
   .bread {
-    width: 90%;
+    width: 200%;
   }
   
   .ingredients-stack {
@@ -26,7 +27,7 @@
   }
   
   .ingredient {
-    width: 70%;
+    width: 40%;
     margin: 5px 0;
   }
   
@@ -45,5 +46,18 @@
   
   .ingredient-option:hover {
     transform: scale(1.2);
+  }
+  .validate-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #285fa7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .validate-button:hover {
+    background-color: #216788;
   }
   

@@ -12,7 +12,7 @@ function Home() {
         <Link to="/menu">
           <button> ORDER NOW </button>
           
-        </Link>
+        </Link> OR 
         <Link to="/CustomSandwich">
           <button> CUSTOMISE YOUR BOCADILLO </button>
           

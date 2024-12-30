@@ -39,8 +39,8 @@
   cursor: pointer;
   justify-content: center;
   background-color: turquoise;
-  height: 50px;
-  width: 180px;
+  height: flex;
+  width: flex;
   color: white;
   text-decoration: none;
   font-size: 20px;

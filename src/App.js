@@ -6,7 +6,7 @@ import Menu from "./pages/Menu";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CustomSandwich from "./pages/CustomSandwich";
-
+import Panier from "./pages/Panier";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -21,6 +21,7 @@ function App() {
           <Route path="/about" exact component={About} />
           <Route path="/contact" exact component={Contact} />
           <Route path="/CustomSandwich" exact component={CustomSandwich} />
+          <Route path="/Panier" exact component={Panier} />
         </Switch>
         <Footer />
       </Router>
