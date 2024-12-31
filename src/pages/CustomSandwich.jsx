@@ -1,42 +1,32 @@
-import React, { useState } from "react";
-import "./CustomSandwich.css";
+import React, { useState, useContext } from "react";
+import "../styles/CustomSandwich.css";
 import { useHistory } from "react-router-dom";
-
-
-// Import the available ingredients from the helper
+import { PanierContext } from "../context/PanierContext";
 import { availableIngredients } from "../helpers/customiseList";
-
-// Import images from the assets folder
 import topBread from "../assets/top-bread.png";
 import bottomBread from "../assets/bottom-bread.png";
 
 const CustomSandwich = () => {
   const [ingredients, setIngredients] = useState([]);
+  const { addToPanier } = useContext(PanierContext);
   const history = useHistory();
 
-  // Function to toggle the ingredient (add or remove)
   const toggleIngredient = (ingredient) => {
-    // Check if the ingredient is already in the sandwich
     const ingredientExists = ingredients.some(
       (item) => item.name === ingredient.name
     );
 
-    // Handle mutually exclusive group logic
     if (ingredient.group) {
-      // Remove other ingredients in the same group
       const filteredIngredients = ingredients.filter(
         (item) => item.group !== ingredient.group
       );
 
       if (!ingredientExists) {
-        // Add the new ingredient from the group
         setIngredients([...filteredIngredients, ingredient]);
       } else {
-        // Just keep the filtered ingredients (effectively removing the clicked one)
         setIngredients(filteredIngredients);
       }
     } else {
-      // If no group, toggle normally
       if (ingredientExists) {
         setIngredients(ingredients.filter((item) => item.name !== ingredient.name));
       } else {
@@ -45,20 +35,23 @@ const CustomSandwich = () => {
     }
   };
 
-  // Handle validation and navigation to the Panier page
   const handleValidation = () => {
-    history.push("/panier", { ingredients });
+    if (ingredients.length > 0) {
+      const selectedIngredients = ingredients.map((ingredient) => ({
+        name: ingredient.name,
+        price: ingredient.price,
+      }));
+      addToPanier({ name: "Custom Sandwich", ingredients: selectedIngredients, price: 8 + ingredients.reduce((total, ingredient) => total + ingredient.price, 0) });
+      history.push("/panier");
+    } else {
+      alert("Please select at least one ingredient.");
+    }
   };
-  
 
-  return ( 
-    
+  return (
     <div className="custom-sandwich-container">
-      
       <h2>Customize Your Sandwich</h2>
-      
       <div className="sandwich-preview">
-             
         <div className="ingredients-stack">
           <img src={topBread} alt="Top Bread" className="bread" />
           {ingredients.map((ingredient, index) => (
@@ -66,11 +59,13 @@ const CustomSandwich = () => {
               key={index}
               src={ingredient.image}
               alt={ingredient.name}
-              className="ingredient"
+              className="ingredient-small" // Classe pour petite taille
             />
-          ))}<img src={bottomBread} alt="Bottom Bread" className="bread" />
-
-<div className="customiseList">
+          ))}
+          <img src={bottomBread} alt="Bottom Bread" className="bread" />
+        </div>
+      </div>
+      <div className="customiseList">
         {availableIngredients.map((ingredient) => (
           <img
             key={ingredient.name}
@@ -81,16 +76,10 @@ const CustomSandwich = () => {
           />
         ))}
       </div>
-        </div>
-        
-      </div>
-      
-      
       <button className="validate-button" onClick={handleValidation}>
         Validate Choices
       </button>
     </div>
-    
   );
 };
 

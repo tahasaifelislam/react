@@ -9,14 +9,49 @@ import poulet from "../assets/poulet.png";
 import thon from "../assets/thon.png";
 import laitue from "../assets/laitue.png";
 
+// helpers/customiseList.js
+
 export const availableIngredients = [
-    { name: "cheese", image: cheese },
-    { name: "Onion", image: onion },
-    { name: "Tomato", image: tomato},
-    { name: "Olives", image: olives },
-    {name: "Viande", image: viande, group: "protein" },
-    { name: "Poulet", image: poulet, group: "protein" },
-    { name: "Thon", image: thon, group: "protein" },
-    { name: "Laitue", image: laitue },
-  ];
+  {
+    name: "Lettuce",
+    image:laitue,
+    price: 0.50,
+  },
+  {
+    name: "Tomato",
+    image: tomato,
+    price: 0.75,
+  },
+  {
+    name: "Cheese",
+    image: cheese,
+    price: 1.00,
+  },
+  {
+    name: "Onion",
+    image: onion,
+    price: 0.60,
+  },
+  {
+    name: "Viande",
+    image:viande, 
+    price: 0.70,
+  },
+  {
+    name: "Thon",
+    image:thon, 
+    price: 0.70,
+  },
+  {
+    name: "Poulet",
+    image:poulet, 
+    price: 0.70,
+  },
+  {
+    name: "Olives",
+    image:olives,
+    price: 0.70,
+  },
+];
+
   

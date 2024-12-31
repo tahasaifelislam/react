@@ -1,0 +1,73 @@
+/* Panier.css */
+
+.panier-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-family: 'Arial', sans-serif;
+}
+
+.receipt-title {
+  font-size: 2em;
+  color: turquoise;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.receipt {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.receipt-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.receipt-item h3 {
+  font-size: 1.5em;
+  color: turquoise;
+  margin: 0;
+}
+
+.ingredients-list {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.ingredient-detail {
+  font-size: 1.1em;
+  color: turquoise;
+}
+
+.item-price {
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 10px;
+}
+
+.total-price {
+  text-align: right;
+  font-size: 1.5em;
+  color: turquoise;
+  margin-top: 20px;
+}
+
+.remove-button {
+  background-color: turquoise;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.remove-button:hover {
+  background-color: turquoise;
+}

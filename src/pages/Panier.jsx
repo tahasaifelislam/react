@@ -1,26 +1,45 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
-import "./Panier.css";
+import React, { useContext } from "react";
+import { PanierContext } from "../context/PanierContext"; // Importer le PanierContext
+import "../styles/Panier.css"; // Importer le fichier CSS
 
 const Panier = () => {
-  const location = useLocation();
-  const { ingredients } = location.state || { ingredients: [] };
+  const { panier, removeFromPanier } = useContext(PanierContext); // Utiliser le contexte pour obtenir le panier
+
+  // Calculer le prix total du panier
+  const totalPrice = panier.reduce((total, item) => total + item.price, 0); 
+
+  const handleRemove = (index) => {
+    removeFromPanier(index); // Supprimer l'élément du panier par son index
+  };
 
   return (
     <div className="panier-container">
-      <h2>Your Panier</h2>
-      {ingredients.length > 0 ? (
-        <div className="ingredient-list">
-          {ingredients.map((ingredient, index) => (
-            <div key={index} className="ingredient-item">
-              <img src={ingredient.image} alt={ingredient.name} className="ingredient-image" />
-              <p>{ingredient.name}</p>
+      <h2 className="receipt-title">KTYM</h2> {/* Titre du reçu */}
+      <div className="receipt">
+        {panier.length > 0 ? (
+          <div className="receipt-items">
+            {panier.map((item, index) => (
+              <div key={index} className="receipt-item">
+                <h3>{item.name}</h3>
+                <div className="ingredients-list">
+                  {item.ingredients && item.ingredients.map((ingredient, idx) => (
+                    <div key={idx} className="ingredient-detail">
+                      <p>{ingredient.name} - {ingredient.price}€</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="item-price">Item Price: {item.price}€</p>
+                <button className="remove-button" onClick={() => handleRemove(index)}>Remove</button>
+              </div>
+            ))}
+            <div className="total-price">
+              <h3>Total: {totalPrice}€</h3>
             </div>
-          ))}
-        </div>
-      ) : (
-        <p>No ingredients selected.</p>
-      )}
+          </div>
+        ) : (
+          <p>No items in the panier.</p>
+        )}
+      </div>
     </div>
   );
 };
