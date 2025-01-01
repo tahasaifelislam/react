@@ -1,0 +1,83 @@
+/* CustomSandwich.css */
+
+/* Suppression du background */
+.custom-sandwich-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style du titre */
+h2 {
+  font-size: 2em;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Centrage de la preview du sandwich */
+.sandwich-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Stack des ingrédients */
+.ingredients-stack {
+  position: relative;
+  width: 200px;
+  height: auto;
+}
+
+.bread, .ingredient-small {
+  width: 80%;  /* Réduction de la taille des ingrédients */
+  display: block;
+  margin: 5px 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+.ingredient-small:hover {
+  transform: scale(1.1);
+}
+
+/* Liste des ingrédients */
+.customiseList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ingredient-option {
+  width: 60px;  /* Taille réduite des options d'ingrédients */
+  height: 60px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.ingredient-option:hover {
+  transform: scale(1.1);
+  border-color: turquoise;
+}
+
+/* Bouton de validation stylisé en turquoise */
+.validate-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #40E0D0;  /* Couleur turquoise */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.validate-button:hover {
+  background-color: #36c2b6;
+}

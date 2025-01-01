@@ -1,0 +1,132 @@
+/* Customisation globale de la page */
+.menu {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.menu .menuTitle {
+  font-family: 'Pacifico', cursive;  /* Utilisation d'une police plus moderne */
+  font-size: 60px;
+  color: #40E0D0;  /* Turquoise */
+  margin-bottom: 20px;
+}
+
+/* Liste des éléments du menu */
+.menuList {
+  width: 70vw;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  gap: 20px;
+}
+
+/* Style des éléments du menu */
+.menuItem {
+  border-radius: 15px;
+  width: 300px;
+  height: 350px;
+  margin: 20px;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menuItem:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.menuItem div {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menuItem h1,
+.menuItem p {
+  margin: 10px 20px;
+  color: #333;
+}
+
+/* Bouton d'ajout au panier */
+.addToCartButton {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  padding: 10px 0;
+  background-color: #40E0D0;  /* Couleur turquoise */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.addToCartButton:hover {
+  background-color: #36c2b6;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.addToCartButton:active {
+  transform: scale(0.95);
+}
+
+/* Réactivité pour les différentes tailles d'écran */
+@media only screen and (max-width: 1300px) {
+  .menuList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .menuList {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Style personnalisé pour les boutons */
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.addToPanierButton {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #40E0D0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.addToPanierButton:hover {
+  background-color: #36c2b6;
+  transform: scale(1.05);
+}
+
+.addToPanierButton:active {
+  transform: scale(0.95);
+}
